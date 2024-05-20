@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  deployment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "docs-assitant"
+    ports:
+      - "5000:5000"
+    container_name: "docs-assitant_cn"
+    restart: unless-stopped
+    command: bash -c "while true; do sleep 1; done"
