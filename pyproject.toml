@@ -19,7 +19,7 @@ ci = ["black", "coverage", "pylint", "flake8"]
 cd = ["twine"]
 
 [project.scripts]
-app.py = "common.app.py:main"
+doc-assist = "common.app:main"
 
 [tool.black]
 line-length = 79

@@ -8,3 +8,6 @@
 - Install the package in development mode inside the virtual environment
 
 # Give explanation of each scripts
+
+
+pip install -e .

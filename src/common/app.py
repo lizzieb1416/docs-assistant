@@ -38,7 +38,7 @@ def main():
         required=True,
     )
 
-    result = _app.py(**vars(script_parser.parse_args()))
+    result = _app(**vars(script_parser.parse_args()))
 
     # Example how to access config toml file
     logging.debug(config)
