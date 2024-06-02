@@ -19,7 +19,10 @@ dependencies = [
   "sentence-transformers==2.7.0",
   "ctransformers==0.2.27",
   "python-dotenv==1.0.1",
-  "faiss-cpu==1.8.0"
+  "faiss-cpu==1.8.0",
+  "requests",
+  "langchain-astradb",
+  "langchainhub"
 ]
 
 [project.optional-dependencies]
