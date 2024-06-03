@@ -20,13 +20,29 @@ def fetch_github(owner, repo, endpoint):
         print("Failed with status code: ", response.status_code)
         return []
 
-    print(data)
+    #print(data)
 
     return data
 
 
+def load_issues(issues):
+    docs = []
+    for entry in issues:
+        metadata = {
+            "author": entry["user"]["login"],
+            "comments": entry["comments"],
+            "body": entry["body"] if entry["body"] else "",
+            "labels": entry["labels"],
+            "created_at": entry["created_at"],
+        }
+        data = entry["title"]
+        if entry["body"]:
+            data += " " + entry["body"]
+        doc = Document(page_content=data, metadata=metadata)
+        docs.append(doc)
 
-owner = "techwithtim"
-repo = "Flask-Web-App-Tutorial"
-endpoint = "issues"
-fetch_github(owner, repo, endpoint)
+    return docs
+
+def fetch_github_issues(owner, repo):
+    data = fetch_github(owner, repo, "issues")
+    return load_issues(data)

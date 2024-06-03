@@ -22,7 +22,9 @@ dependencies = [
   "faiss-cpu==1.8.0",
   "requests",
   "langchain-astradb",
-  "langchainhub"
+  "langchainhub",
+  "pinecone-client",
+  "langchain-pinecone"
 ]
 
 [project.optional-dependencies]
